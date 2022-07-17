@@ -1,12 +1,9 @@
-function BasketItem({
-    id,
-    name,
-    price,
-    quantity,
-    removeFromBasket = Function.prototype,
-    incQuantity = Function.Prototype,
-    decQuantity = Function.Prototype,
-}) {
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
+function BasketItem({ id, name, price, quantity }) {
+    const { removeFromBasket, incQuantity, decQuantity } =
+        useContext(ShopContext);
     return (
         <li href="#!" className="collection-item">
             {name} x {quantity} = {price * quantity} мон.
